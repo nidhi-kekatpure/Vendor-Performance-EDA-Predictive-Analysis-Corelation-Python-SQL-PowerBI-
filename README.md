@@ -1,6 +1,6 @@
-# 📦 Vendor Performance Report
+#  Vendor Performance Report
 
-## 📌 Business Problem
+##  Business Problem
 
 Effective inventory and sales management are critical for optimizing profitability in the retail and wholesale industry. Companies need to ensure that they are not incurring losses due to inefficient pricing, poor inventory turnover, or vendor dependency.
 
@@ -13,9 +13,9 @@ Effective inventory and sales management are critical for optimizing profitabili
 
 ---
 
-## 📊 Exploratory Data Analysis Insights
+##  Exploratory Data Analysis Insights
 
-### 🔢 Summary Statistics
+###  Summary Statistics
 
 ![Summary Statistics](images/img1.png)
 ![Summary Statistics](images/img2.png)
@@ -44,7 +44,7 @@ indicates that sales for a product exceed the purchased quantity due to
 older stock fulfilling orders. 
 ---
 
-## 🧼 Data Filtering
+##  Data Filtering
 
 To enhance the reliability of the insights, we removed inconsistent data 
 points where: 
@@ -55,7 +55,7 @@ transactions).
 
 ---
 
-## 🔗 Correlation Insights
+##  Correlation Insights
 
 ![Correlation Chart](images/img3.png)
 
@@ -72,7 +72,7 @@ correlation (-0.038 & -0.055), indicating that faster stock turnover does not
 necessarily equate to higher profitability.
 ---
 
-## ❓ Research Questions & Key Findings
+##  Research Questions & Key Findings
 
 ### 1. Brands for Promotional or Pricing Adjustments
 
@@ -140,15 +140,15 @@ pricing strategies, and enhance distribution networks.
 and low-performing vendors.  
 - **H₁: (Alternative Hypothesis)** A significant difference exists in profit margins 
 between the two vendor groups.  
-✅ Result: The null hypothesis is rejected, confirming that the two groups 
+ Result: The null hypothesis is rejected, confirming that the two groups 
 operate under distinctly different profitability models.
 
-  ✅ Implication: High-margin vendors may benefit from better pricing 
+   Implication: High-margin vendors may benefit from better pricing 
 strategies, while top-selling vendors could focus on cost efficiency.
 
 ---
 
-## ✅ Final Recommendations
+##  Final Recommendations
 
 - Re-evaluate pricing for low-sales, high-margin brands to boost sales 
 volume without sacrificing profitability.
