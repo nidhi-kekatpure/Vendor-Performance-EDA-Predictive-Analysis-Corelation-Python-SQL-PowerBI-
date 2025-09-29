@@ -1,170 +1,208 @@
-#  Vendor Performance Report
+# Vendor Performance Analytics - Streamlit App
 
-##  Business Problem
+An interactive web application for comprehensive vendor performance analysis, built with Streamlit and deployed on Streamlit Cloud.
 
-Effective inventory and sales management are critical for optimizing profitability in the retail and wholesale industry. Companies need to ensure that they are not incurring losses due to inefficient pricing, poor inventory turnover, or vendor dependency.
+## Live Demo
 
-**The goal of this analysis is to:**
-- Identify underperforming brands that require promotional or pricing adjustments  
-- Determine top vendors contributing to sales and gross profit  
-- Analyze the impact of bulk purchasing on unit costs  
-- Assess inventory turnover to reduce holding costs and improve efficiency  
-- Investigate the profitability variance between high-performing and low-performing vendors
+**Try the app now:** 
+
+## 📋 Features
+
+### Main Dashboard (`app.py`)
+- **Multi-page Navigation**: Seamless navigation between different analysis modules
+- **Interactive Filters**: Dynamic filtering by vendor, profit margin, and revenue ranges
+- **Real-time Metrics**: Key performance indicators with live updates
+- **Responsive Design**: Optimized for desktop and mobile viewing
+
+### Executive Dashboard
+- **KPI Overview**: Total revenue, profit, vendors, and stock turnover metrics
+- **Performance Matrix**: BCG-style matrix categorizing products into Stars, Cash Cows, Question Marks, and Dogs
+- **Business Insights**: Automated insights on revenue concentration, inventory health, and profitability
+
+### Vendor Analysis
+- **Vendor Portfolio**: Comprehensive overview of all vendor relationships
+- **Detailed Analysis**: Deep-dive into individual vendor performance
+- **Comparison Tools**: Side-by-side vendor comparison with multiple metrics
+- **Performance Classification**: Automatic categorization of vendors into performance tiers
+
+### Inventory Management
+- **Stock Turnover Analysis**: Visual analysis of inventory movement patterns
+- **Dead Stock Detection**: Identification of non-moving inventory with value impact
+- **Overstock Analysis**: Detection of excess inventory situations
+- **Actionable Recommendations**: Specific suggestions for inventory optimization
+
+### Statistical Analysis
+- **Correlation Analysis**: Interactive correlation matrix of key business metrics
+- **Distribution Analysis**: Statistical distribution analysis with normality tests
+- **Hypothesis Testing**: T-tests and ANOVA for vendor performance comparison
+- **Advanced Analytics**: Regression analysis, outlier detection, and confidence intervals
+
+## Technology Stack
+
+- **Frontend**: Streamlit
+- **Data Processing**: Pandas, NumPy
+- **Visualizations**: Plotly, Seaborn, Matplotlib
+- **Statistics**: SciPy
+- **Deployment**: Streamlit Cloud
+
+## Project Structure
+
+```
+├── app.py                          # Main application entry point
+├── requirements.txt                # Python dependencies
+├── vendor_sales_summary.csv        # Data source
+├── pages/
+│   ├── 1_Dashboard.py          # Executive dashboard
+│   ├── 2_Vendor_Analysis.py    # Vendor performance analysis
+│   ├── 3_Inventory_Management.py # Inventory insights
+│   └── 4_Statistical_Analysis.py # Statistical analysis
+└── README_Streamlit.md            # This file
+```
+
+##  Quick Start
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd vendor-performance-analytics
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the application**
+   ```bash
+   streamlit run app.py
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:8501`
+
+### Streamlit Cloud Deployment
+
+1. **Fork this repository** to your GitHub account
+
+2. **Connect to Streamlit Cloud**
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Sign in with GitHub
+   - Click "New app"
+
+3. **Configure deployment**
+   - Repository: `your-username/vendor-performance-analytics`
+   - Branch: `main`
+   - Main file path: `app.py`
+
+4. **Deploy**
+   - Click "Deploy!"
+   - Your app will be available at `https://your-app-name.streamlit.app`
+
+## Data Requirements
+
+The application expects a CSV file named `vendor_sales_summary.csv` with the following columns:
+
+| Column | Description |
+|--------|-------------|
+| VendorNumber | Unique vendor identifier |
+| VendorName | Vendor company name |
+| Brand | Product brand identifier |
+| Description | Product description |
+| PurchasePrice | Cost price per unit |
+| ActualPrice | Selling price per unit |
+| Volume | Product volume/size |
+| TotalPurchaseQuantity | Total units purchased |
+| TotalPurchaseDollars | Total purchase cost |
+| TotalSalesQuantity | Total units sold |
+| TotalSalesDollars | Total sales revenue |
+| TotalSalesPrice | Total selling price |
+| TotalExciseTax | Total tax amount |
+| FreightCost | Shipping and handling costs |
+| GrossProfit | Revenue minus costs |
+| ProfitMargin | Profit as percentage of revenue |
+| StockTurnover | Sales quantity / Purchase quantity |
+| SalesToPurchaseRatio | Sales dollars / Purchase dollars |
+
+## Key Metrics & KPIs
+
+### Financial Metrics
+- **Total Revenue**: Sum of all sales dollars
+- **Gross Profit**: Revenue minus purchase costs
+- **Profit Margin**: Profit as percentage of revenue
+- **ROI**: Return on investment per vendor/product
+
+### Operational Metrics
+- **Stock Turnover**: Inventory movement efficiency
+- **Dead Stock**: Products with zero sales
+- **Overstock**: Excess inventory situations
+- **Vendor Concentration**: Revenue distribution across vendors
+
+### Performance Categories
+- **Stars**: High revenue, high margin products
+- **Cash Cows**: High revenue, low margin products
+- **Question Marks**: Low revenue, high margin products
+- **Dogs**: Low revenue, low margin products
+
+## Customization
+
+### Adding New Pages
+1. Create a new Python file in the `pages/` directory
+2. Follow the naming convention: `N_Page_Name.py`
+3. Use the same structure as existing pages
+
+### Modifying Visualizations
+- All charts use Plotly for interactivity
+- Color schemes can be customized in each page
+- Chart types can be easily swapped
+
+### Adding New Metrics
+1. Calculate new metrics in the data processing functions
+2. Add to the appropriate dashboard sections
+3. Update filters and selections as needed
+
+## Business Value
+
+### For Executives
+- **Strategic Overview**: High-level KPIs and performance trends
+- **Risk Assessment**: Vendor concentration and inventory risks
+- **Growth Opportunities**: Identification of high-potential areas
+
+### For Operations Managers
+- **Inventory Optimization**: Dead stock and overstock identification
+- **Vendor Management**: Performance-based vendor evaluation
+- **Cost Reduction**: Identification of inefficient processes
+
+### For Analysts
+- **Statistical Insights**: Correlation analysis and hypothesis testing
+- **Predictive Analytics**: Trend analysis and forecasting capabilities
+- **Data Quality**: Outlier detection and data validation
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+##� Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/your-username/vendor-performance-analytics/issues) page
+2. Create a new issue with detailed description
+3. Include screenshots and error messages if applicable
+
+## Future Enhancements
+
+- [ ] Real-time data integration
+- [ ] Machine learning predictions
+- [ ] Advanced forecasting models
+- [ ] Export functionality for reports
+- [ ] User authentication and role-based access
+- [ ] Integration with ERP systems
+- [ ] Mobile app version
 
 ---
-
-##  Exploratory Data Analysis Insights
-
-###  Summary Statistics
-
-![Summary Statistics](images/img1.png)
-![Summary Statistics](images/img2.png)
-
-#### Negative & Zero Values
-- **Gross Profit:** Minimum of -52,002.78, indicating potential losses due to 
-high costs or heavy discounts. This could be due to selling products at 
-lower prices than their purchase costs. 
-- **Profit Margin:** Has a minimum of -∞, which suggests instances where 
-revenue is zero or even lower than the total cost, leading to extreme 
-negative profit margins.
-- **Total Sales Quantity & Sales Dollars:** Some products show zero sales, 
-indicating they were purchased but never sold. These may be slow-moving 
-or obsolete stock, leading to inventory inefficiencies. 
-
-#### Outliers
-- **Purchase & Actual Prices:** The maximum values (5,681.81 & 7,499.99) 
-are significantly higher than the mean (24.39 & 35.64), indicating premium 
-product offerings.
-- **Freight Cost:** Extreme variation from 0.09 to 257,032.07 suggests logistics 
-inefficiencies, bulk shipments, or erratic shipping costs across different 
-products.
-- **Stock Turnover:** Ranges from 0 to 274.5, suggesting some products sell 
-rapidly while others remain unsold for long periods. A value greater than 1 
-indicates that sales for a product exceed the purchased quantity due to 
-older stock fulfilling orders. 
----
-
-##  Data Filtering
-
-To enhance the reliability of the insights, we removed inconsistent data 
-points where: 
-- Gross Profit ≤ 0 (to exclude transactions leading to losses).
-- Profit Margin ≤ 0 (to ensure analysis focuses on profitable 
-transactions).
-- Sales Quantity = 0 (to eliminate inventory that was never sold).
-
----
-
-##  Correlation Insights
-
-![Correlation Chart](images/img3.png)
-
-- **Purchase Price vs. Total Sales Dollars & Gross Profit:** Weak correlation 
-(-0.012 and -0.016), indicating that price variations do not significantly 
-impact sales revenue or profit.
-- **Total Purchase Quantity vs. Total Sales Quantity:** Strong correlation 
-(0.999), confirming efficient inventory turnover.
-- **Profit Margin vs. Total Sales Price:** Negative correlation (-0.179), 
-suggesting increasing sales prices may lead to reduced margins, possibly 
-due to competitive pricing pressures.
-- **Stock Turnover vs. Gross Profit & Profit Margin:** Weak negative 
-correlation (-0.038 & -0.055), indicating that faster stock turnover does not 
-necessarily equate to higher profitability.
----
-
-##  Research Questions & Key Findings
-
-### 1. Brands for Promotional or Pricing Adjustments
-
-![Promotions](images/img4.png)
-
-198 brands exhibit lower sales but higher profit margins, which could 
-benefit from targeted marketing, promotions, or price optimizations to 
-increase volume without compromising profitability. 
-
-![Promotions](images/img5.png)
-
-### 2. Top Vendors by Sales & Purchase Contribution
-
-The top 10 vendors contribute 65.69% of total purchases, while the 
-remaining vendors contribute only 34.31%. This over-reliance on a few 
-vendors may introduce risks such as supply chain disruptions, indicating a 
-need for diversification. 
-
-![Promotions](images/img6.png)
-
-### 3. Impact of Bulk Purchasing on Cost Savings
-
-Vendors buying in large quantities receive a 72% lower unit cost ($10.78 
-per unit vs. higher unit costs in smaller orders). 
-Bulk pricing strategies encourage larger orders, increasing total sales while 
-maintaining profitability. 
-
-![Promotions](images/img7.png)
-
-
-### 4. Identifying Vendors with Low Inventory Turnover
-
-Total Unsold Inventory Capital: $2.71M 
-Slow-moving inventory increases storage costs, reduces cash flow 
-efficiency, and affects overall profitability. 
-Identifying vendors with low inventory turnover enables better stock 
-management, minimizing financial strain. 
-
-  ![Inventory Turnover](images/img8.png)
-
-### 5. Profit Margin Comparison: High vs. Low-Performing Vendors
-
-- **Top Vendors’ Mean Profit Margin (95% CI):** (30.74%, 31.61%), Mean: 31.17%
-- **Low Vendors’ Mean Margin (95% CI):**  (40.48%, 42.62%), Mean: 41.55%
-- High margins don’t always lead to high volume.
-  
-Low-performing vendors maintain higher margins but struggle with sales 
-volumes, indicating potential pricing inefficiencies or market reach issues.
-
-Actionable Insights:
-
-● Top-performing vendors: Optimize profitability by adjusting 
-pricing, reducing operational costs, or offering bundled 
-promotions. 
-
-● Low-performing vendors: Improve marketing efforts, optimize 
-pricing strategies, and enhance distribution networks. 
-
-  ![Inventory Turnover](images/img9.png)
-
-### 6. Statistical Validation of Profit Margin Differences
-
-**Hypothesis Testing:**  
-- **H₀: (Null Hypothesis)** No significant difference in profit margins between top 
-and low-performing vendors.  
-- **H₁: (Alternative Hypothesis)** A significant difference exists in profit margins 
-between the two vendor groups.  
- Result: The null hypothesis is rejected, confirming that the two groups 
-operate under distinctly different profitability models.
-
-   Implication: High-margin vendors may benefit from better pricing 
-strategies, while top-selling vendors could focus on cost efficiency.
-
----
-
-##  Final Recommendations
-
-- Re-evaluate pricing for low-sales, high-margin brands to boost sales 
-volume without sacrificing profitability.
-- Diversify vendor partnerships to reduce dependency on a few 
-suppliers and mitigate supply chain risks. 
-- Leverage bulk purchasing advantages to maintain competitive pricing 
-while optimizing inventory management. 
-- Optimize slow-moving inventory by adjusting purchase quantities, 
-launching clearance sales, or revising storage strategies. 
-- Enhance marketing and distribution strategies for low-performing 
-vendors to drive higher sales volumes without compromising profit 
-margins.
-- By implementing these recommendations, the company can achieve 
-sustainable profitability, mitigate risks, and enhance overall 
-operational efficiency.
-
----
-
-By applying these recommendations, the company can improve profitability and reduce operational risks.
