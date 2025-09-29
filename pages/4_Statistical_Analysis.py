@@ -6,6 +6,14 @@ import numpy as np
 from scipy import stats
 import plotly.figure_factory as ff
 
+# Handle optional statsmodels import
+try:
+    import statsmodels.api as sm
+    STATSMODELS_AVAILABLE = True
+except ImportError:
+    STATSMODELS_AVAILABLE = False
+    st.warning("⚠️ Some advanced statistical features require statsmodels. Install with: pip install statsmodels")
+
 st.set_page_config(page_title="Statistical Analysis", page_icon="📈", layout="wide")
 
 @st.cache_data
@@ -334,13 +342,25 @@ def main():
         
         slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
         
+        # Create scatter plot with manual trendline
         fig = px.scatter(
             clean_df,
             x='ActualPrice',
             y='TotalSalesDollars',
-            title=f"Price vs Revenue (R² = {r_value**2:.3f})",
-            trendline="ols"
+            title=f"Price vs Revenue (R² = {r_value**2:.3f})"
         )
+        
+        # Add manual trendline
+        x_range = np.linspace(clean_df['ActualPrice'].min(), clean_df['ActualPrice'].max(), 100)
+        y_trend = slope * x_range + intercept
+        
+        fig.add_trace(go.Scatter(
+            x=x_range,
+            y=y_trend,
+            mode='lines',
+            name=f'Trendline (R² = {r_value**2:.3f})',
+            line=dict(color='red', dash='dash')
+        ))
         st.plotly_chart(fig, use_container_width=True)
         
         col1, col2, col3 = st.columns(3)
