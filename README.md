@@ -15,7 +15,7 @@ Effective inventory and sales management are critical for optimizing profitabili
 
 ## Live Demo
 
-**Try the app now**: 
+**Try the app now**: https://vendor-analytics.streamlit.app/
 
 ---
 
