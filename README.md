@@ -13,6 +13,12 @@ Effective inventory and sales management are critical for optimizing profitabili
 
 ---
 
+## Live Demo
+
+**Try the app now**: 
+
+---
+
 ##  Exploratory Data Analysis Insights
 
 ###  Summary Statistics
