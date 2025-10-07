@@ -154,6 +154,12 @@ strategies, while top-selling vendors could focus on cost efficiency.
 
 ---
 
+## Power BI Dashboard
+
+![Dashboard](images/img9.png)
+
+---
+
 ##  Final Recommendations
 
 - Re-evaluate pricing for low-sales, high-margin brands to boost sales 
