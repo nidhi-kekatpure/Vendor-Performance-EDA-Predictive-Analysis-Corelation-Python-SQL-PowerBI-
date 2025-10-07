@@ -156,7 +156,7 @@ strategies, while top-selling vendors could focus on cost efficiency.
 
 ## Power BI Dashboard
 
-![Dashboard](images/img9.png)
+![Dashboard](images/img10.png)
 
 ---
 
